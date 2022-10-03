@@ -32,8 +32,16 @@ public class Main {
             System.out.println(vehicle);
             vehicle.start();
             vehicle.stop();
+            if (vehicle instanceof Competable) {
+                testInterface((Competable) vehicle);
+            }
         }
+    }
 
+    private static void testInterface(Competable vehicle) {
+        vehicle.pitStop();
+        vehicle.maxSpeed();
+        vehicle.bestLapTime();
     }
 
 
