@@ -1,6 +1,6 @@
 package transport;
 
-public class Truck extends Transport {
+public class Truck extends Transport implements Competing {
 
     private static final String TRUCK = "Грузовой автомобиль: ";
 
@@ -27,6 +27,22 @@ public class Truck extends Transport {
     @Override
     public void stop() {
         System.out.println(TRUCK + getBrand() + " " + getModel() + " закончил движение!");
+    }
+
+    @Override
+    public void pitStop() {
+        System.out.println("Грузовик. Пит-стоп!");
+    }
+
+    @Override
+    public void bestLapTime() {
+        System.out.println("Лучшее время круга для грузовика: ");
+    }
+
+    @Override
+    public void maxSpeed() {
+        System.out.println("максимальная скорость авто: ");
+
     }
 
 

@@ -1,7 +1,4 @@
-import transport.Bus;
-import transport.Car;
-import transport.Transport;
-import transport.Truck;
+import transport.*;
 
 import java.util.ArrayList;
 
@@ -36,6 +33,7 @@ public class Main {
             vehicle.start();
             vehicle.stop();
         }
+
     }
 
 
