@@ -1,6 +1,6 @@
 package transport;
 
-public class Car extends Transport implements Competing {
+public class Car extends Transport implements Competable {
 
     private static final String CAR = "Легковой автомобиль: ";
 
