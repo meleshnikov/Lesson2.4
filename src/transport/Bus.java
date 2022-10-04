@@ -1,6 +1,6 @@
 package transport;
 
-public class Bus extends Transport implements Competable {
+public class Bus extends Transport implements Competing {
 
     private static final String BUS = "Автобус: ";
 
@@ -27,6 +27,11 @@ public class Bus extends Transport implements Competable {
     @Override
     public void stop() {
         System.out.println(BUS + getBrand() + " " + getModel() + " закончил движение!");
+    }
+
+    @Override
+    public void refill() {
+        System.out.println("Автобус заправляется соляркой ...");
     }
 
     @Override

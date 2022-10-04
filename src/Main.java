@@ -5,9 +5,12 @@ import java.util.ArrayList;
 public class Main {
 
     private static final ArrayList<Transport> vehicles = new ArrayList<>();
+    private static final ArrayList<Driver> drivers = new ArrayList<>();
+
 
     public static void main(String[] args) {
-        transportTest();
+        //transportTest();
+        driverTest();
     }
 
 
@@ -32,17 +35,31 @@ public class Main {
             System.out.println(vehicle);
             vehicle.start();
             vehicle.stop();
-            if (vehicle instanceof Competable) {
-                testInterface((Competable) vehicle);
+            if (vehicle instanceof Competing) {
+                compete((Competing) vehicle);
             }
         }
     }
 
-    private static void testInterface(Competable vehicle) {
+    private static void compete(Competing vehicle) {
         vehicle.pitStop();
         vehicle.maxSpeed();
         vehicle.bestLapTime();
     }
 
+    private static void driverTest() {
 
+        drivers.add(new Driver<>("Иванов Иван Иванович", new Car("Mercedes", "GLC")));
+        drivers.add(new Driver<>("Василий Васильевич Васильев", new Truck("Камаз", "43118")));
+        drivers.add(new Driver<>("Петр Петрович Петренко", new Bus("Икарус", "250")));
+
+        for (Driver driver : drivers) {
+            driver.setExperience((int) (Math.random() * 10));
+            System.out.println(driver);
+            driver.getInfo();
+            driver.start();
+            driver.stop();
+            driver.refill();
+        }
+    }
 }

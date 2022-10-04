@@ -1,6 +1,6 @@
 package transport;
 
-public abstract class Transport {
+public abstract class Transport implements Drivable {
     private String brand;
     private String model;
     private double engineVolume;
@@ -52,18 +52,11 @@ public abstract class Transport {
 
     @Override
     public String toString() {
-        return "Transport{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", engineVolume=" + engineVolume +
-                '}';
+        return getBrand() + " " + getModel();
     }
 
     protected static boolean isValid(String field) {
         return field != null && !field.isEmpty() && !field.isBlank();
     }
 
-    public abstract void start();
-
-    public abstract void stop();
 }

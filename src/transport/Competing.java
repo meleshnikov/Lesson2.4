@@ -1,6 +1,6 @@
 package transport;
 
-public interface Competable {
+public interface Competing {
 
     void pitStop();
 
