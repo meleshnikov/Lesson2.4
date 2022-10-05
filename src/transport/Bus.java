@@ -2,21 +2,34 @@ package transport;
 
 public class Bus extends Transport implements Competing {
 
+    private Capacity capacity;
     private static final String BUS = "Автобус: ";
 
     public Bus(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
+        this.capacity = Capacity.MEDIUM;
     }
 
     public Bus(String brand, String model) {
         super(brand, model);
+        this.capacity = Capacity.MEDIUM;
     }
 
     public Bus(String brand) {
         super(brand);
+        this.capacity = Capacity.MEDIUM;
     }
 
     public Bus() {
+        this.capacity = Capacity.MEDIUM;
+    }
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
     }
 
     @Override
@@ -47,8 +60,47 @@ public class Bus extends Transport implements Competing {
     @Override
     public void maxSpeed() {
         System.out.println("максимальная скорость автобуса: ");
-
     }
 
+    @Override
+    public void printType() {
+        if (capacity != null) {
+            System.out.printf("Вместимость: от %d до %d мест\n", getCapacity().from, getCapacity().to);
+        } else {
+            System.out.println("Данных по автобусу недостаточно");
+        }
+    }
+
+    public enum Capacity {
+        EXTRA_SMALL(0, 10),
+        SMALL(10, 25),
+        MEDIUM(40, 50),
+        LARGE(60, 80),
+        EXTRA_LARGE(100, 120);
+
+        private int from;
+        private int to;
+
+        Capacity(int from, int to) {
+            this.from = from;
+            this.to = to;
+        }
+
+        public int getFrom() {
+            return from;
+        }
+
+        public int getTo() {
+            return to;
+        }
+
+        public void setFrom(int from) {
+            this.from = from;
+        }
+
+        public void setTo(int to) {
+            this.to = to;
+        }
+    }
 
 }

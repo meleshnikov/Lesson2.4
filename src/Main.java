@@ -9,7 +9,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        //transportTest();
+        transportTest();
         driverTest();
     }
 
@@ -18,7 +18,7 @@ public class Main {
 
         vehicles.add(new Car("ВАЗ", "21099", 1.5));
         vehicles.add(new Car("Toyota", "Camry", 3.5));
-        vehicles.add(new Car("BMW"));
+        vehicles.add(new Car("BMW", "X5", 3, Car.Body.CROSSOVER));
         vehicles.add(new Car());
 
         vehicles.add(new Truck("Камаз", "65115-48", 6.7));
@@ -35,6 +35,7 @@ public class Main {
             System.out.println(vehicle);
             vehicle.start();
             vehicle.stop();
+            vehicle.printType();
             if (vehicle instanceof Competing) {
                 compete((Competing) vehicle);
             }
@@ -49,9 +50,12 @@ public class Main {
 
     private static void driverTest() {
 
-        drivers.add(new Driver<>("Иванов Иван Иванович", new Car("Mercedes", "GLC")));
-        drivers.add(new Driver<>("Василий Васильевич Васильев", new Truck("Камаз", "43118")));
-        drivers.add(new Driver<>("Петр Петрович Петренко", new Bus("Икарус", "250")));
+        drivers.add(new Driver<>("Иванов Иван Иванович", "b"));
+        drivers.get(0).setTransport(new Car("Mercedes", "GLC"));
+        drivers.add(new Driver<>("Василий Васильевич Васильев", "d"));
+        drivers.get(1).setTransport(new Truck("Камаз", "43118"));
+        drivers.add(new Driver<>("Петр Петрович Петренко", "c"));
+        drivers.get(2).setTransport(new Bus("Икарус", "250"));
 
         for (Driver driver : drivers) {
             driver.setExperience((int) (Math.random() * 10));
