@@ -55,7 +55,10 @@ public abstract class Transport implements Drivable {
         return getBrand() + " " + getModel();
     }
 
-    abstract public void printType();
+    public abstract void printType();
+
+    public abstract boolean diag();
+
 
     protected static boolean isValid(String field) {
         return field != null && !field.isEmpty() && !field.isBlank();

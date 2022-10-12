@@ -71,6 +71,12 @@ public class Bus extends Transport implements Competing {
         }
     }
 
+    @Override
+    public boolean diag() {
+        System.out.println("Автобус в диагностике не нуждается");
+        return true;
+    }
+
     public enum Capacity {
         EXTRA_SMALL(0, 10),
         SMALL(10, 25),

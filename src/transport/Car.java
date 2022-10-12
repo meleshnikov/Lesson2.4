@@ -79,6 +79,11 @@ public class Car extends Transport implements Competing, Drivable {
         }
     }
 
+    @Override
+    public boolean diag() {
+        return false;
+    }
+
     public enum Body {
         SEDAN("Седан"),
         HATCHBACK("Хэтчбек"),

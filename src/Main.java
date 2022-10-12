@@ -1,3 +1,7 @@
+import driver.Driver;
+import driver.DriverB;
+import driver.DriverC;
+import driver.DriverD;
 import transport.*;
 
 import java.util.ArrayList;
@@ -10,6 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         transportTest();
+        System.out.println("\n\n");
         driverTest();
     }
 
@@ -50,12 +55,12 @@ public class Main {
 
     private static void driverTest() {
 
-        drivers.add(new Driver<>("Иванов Иван Иванович", "b"));
-        drivers.get(0).setTransport(new Car("Mercedes", "GLC"));
-        drivers.add(new Driver<>("Василий Васильевич Васильев", "d"));
-        drivers.get(1).setTransport(new Truck("Камаз", "43118"));
-        drivers.add(new Driver<>("Петр Петрович Петренко", "c"));
-        drivers.get(2).setTransport(new Bus("Икарус", "250"));
+        Car mercedes = new Car("Mercedes", "GLC");
+        Truck kamaz = new Truck("Камаз", "43118");
+        Bus icarus = new Bus("Икарус", "250");
+        drivers.add(new DriverB("Иванов Иван Иванович", mercedes));
+        drivers.add(new DriverC("Василий Васильевич Васильев", kamaz));
+        drivers.add(new DriverD("Петр Петрович Петренко", icarus));
 
         for (Driver driver : drivers) {
             driver.setExperience((int) (Math.random() * 10));

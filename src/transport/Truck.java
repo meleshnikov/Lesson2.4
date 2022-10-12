@@ -75,6 +75,11 @@ public class Truck extends Transport implements Competing {
 
     }
 
+    @Override
+    public boolean diag() {
+        return false;
+    }
+
     public enum Load {
         N1(0, 3.5),
         N2(3.5, 12),
