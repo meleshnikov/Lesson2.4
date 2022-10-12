@@ -12,4 +12,5 @@ public class DriverB extends Driver<Car> {
         super(name, transport);
         setLicense("B");
     }
+
 }

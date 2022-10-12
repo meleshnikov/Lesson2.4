@@ -77,7 +77,7 @@ public class Truck extends Transport implements Competing {
 
     @Override
     public boolean diag() {
-        return false;
+        return Math.random() > 0.5;
     }
 
     public enum Load {

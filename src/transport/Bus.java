@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.Random;
+
 public class Bus extends Transport implements Competing {
 
     private Capacity capacity;
@@ -65,7 +67,9 @@ public class Bus extends Transport implements Competing {
     @Override
     public void printType() {
         if (capacity != null) {
-            System.out.printf("Вместимость: от %d до %d мест\n", getCapacity().from, getCapacity().to);
+            System.out.printf("Вместимость: от %d до %d мест\n",
+                    getCapacity().from,
+                    getCapacity().to);
         } else {
             System.out.println("Данных по автобусу недостаточно");
         }
@@ -73,8 +77,7 @@ public class Bus extends Transport implements Competing {
 
     @Override
     public boolean diag() {
-        System.out.println("Автобус в диагностике не нуждается");
-        return true;
+        throw new UnsupportedOperationException("Автобусы» диагностику проходить не могут");
     }
 
     public enum Capacity {

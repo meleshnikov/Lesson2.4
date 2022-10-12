@@ -36,9 +36,11 @@ public abstract class Driver<T extends Transport & Competing> implements Drivabl
         return license;
     }
 
-    public void setLicense(String license) {
+    protected void setLicense(String license) {
         this.license = license;
     }
+
+    ;
 
     public int getExperience() {
         return experience;
@@ -92,4 +94,5 @@ public abstract class Driver<T extends Transport & Competing> implements Drivabl
                 getLicense(),
                 getTransport());
     }
+
 }

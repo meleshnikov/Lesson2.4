@@ -81,7 +81,7 @@ public class Car extends Transport implements Competing, Drivable {
 
     @Override
     public boolean diag() {
-        return false;
+        return Math.random() < 0.8;
     }
 
     public enum Body {
@@ -104,7 +104,6 @@ public class Car extends Transport implements Competing, Drivable {
         public String getTranscript() {
             return transcript;
         }
-
 
     }
 

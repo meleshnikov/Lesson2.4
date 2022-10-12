@@ -64,5 +64,4 @@ public abstract class Transport implements Drivable {
         return field != null && !field.isEmpty() && !field.isBlank();
     }
 
-
 }
