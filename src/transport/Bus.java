@@ -77,7 +77,8 @@ public class Bus extends Transport implements Competing {
 
     @Override
     public boolean diag() {
-        throw new UnsupportedOperationException("Автобусы» диагностику проходить не могут");
+        return Math.random() < 0.9;
+        //throw new UnsupportedOperationException("Автобусы» диагностику проходить не могут");
     }
 
     public enum Capacity {
