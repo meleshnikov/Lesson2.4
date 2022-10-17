@@ -2,7 +2,7 @@ package service;
 
 import transport.Transport;
 
-import java.util.List;
+import java.util.Set;
 
 public class Sponsor {
 
@@ -74,7 +74,7 @@ public class Sponsor {
         }
     }
 
-    public void donate(double donation, List<Transport> transports) {
+    public void donate(double donation, Set<Transport> transports) {
         for (Transport vehicle : transports) {
             donate(donation, vehicle);
         }

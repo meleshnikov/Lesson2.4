@@ -3,17 +3,15 @@ package transport;
 import service.Mechanic;
 import service.Sponsor;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public abstract class Transport implements Drivable {
     private String brand;
     private String model;
     private double engineVolume;
 
-    private final List<Sponsor> sponsors = new ArrayList<>();
-    private final List<Mechanic<?>> mechanics = new ArrayList<>();
+    private final Set<Sponsor> sponsors = new HashSet<>();
+    private final Set<Mechanic<?>> mechanics = new HashSet<>();
 
     private double donatesSum;
 
@@ -50,7 +48,7 @@ public abstract class Transport implements Drivable {
         return engineVolume;
     }
 
-    public List<Sponsor> getSponsors() {
+    public Set<Sponsor> getSponsors() {
         return sponsors;
     }
 
@@ -58,7 +56,7 @@ public abstract class Transport implements Drivable {
         return donatesSum;
     }
 
-    public List<Mechanic<?>> getMechanics() {
+    public Set<Mechanic<?>> getMechanics() {
         return mechanics;
     }
 
